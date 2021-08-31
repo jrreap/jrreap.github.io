@@ -1,0 +1,22 @@
+.text-center {
+  text-align: center !important;
+}
+
+.header {
+  padding-top: 10px;
+}
+
+.container {
+  padding: 5px 5px 5px 5px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+}
+
+.headshot {
+  border-radius: 50px;
+  height: 200px;
+  width: 275px;
+}
