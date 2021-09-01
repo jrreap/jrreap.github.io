@@ -6,6 +6,11 @@
   padding-top: 10px;
 }
 
+.page {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .container {
   padding: 5px 5px 5px 5px;
   flex: 1;
@@ -44,4 +49,15 @@
 
 .nav a:hover {
   color: #00ffff
+}
+
+/* Tile (basically a cheap version of the Bootstrap Card) Styles */
+.tile {
+  border-radius: 5px;
+  background-color: lightgrey;
+  padding: 10px;
+  max-width: 75%;
+  width: 75%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
