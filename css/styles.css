@@ -8,6 +8,11 @@ body {
 
 .header {
   padding-top: 10px;
+  margin-bottom: -10px;
+}
+
+.subtitle {
+  font-size: 15px;
 }
 
 .page {
