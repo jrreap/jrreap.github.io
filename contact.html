@@ -26,10 +26,10 @@
               <a class="nav-link" aria-current="page" href="./index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="./aboutMe.html">About Me</a>
+              <a class="nav-link" href="./aboutMe.html">About Me</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./contact.html">Contact Form</a>
+              <a class="nav-link active" href="./contact.html">Contact Form</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="https://mattm401.github.io/">Course Site</a>
@@ -64,19 +64,17 @@
         <div class="row">
           <div class="card mb-2 bg-light">
             <div class="card-body">
-              <h2>The Beginning</h2>
-              <p>Web development and design was actually the main reason I started learning to code. While Python was
-                the
-                first programming language I ever learned,
-                HTML/CSS were the first languages I ever truly used regularly. I did a little freelance for a short time
-                before picking up JavaScript and moving
-                into React (and sorta Angular).
-              </p>
-              <p>One additional <strong>fun fact</strong> about me is that I really like building sandcastles. Not just
-                tiny
-                small ones, huge "sand civilizations". My biggest castle
-                was nearly 20ft across.
-              </p>
+              <form id='nameform'>
+                <div class='form-group'>
+                  <label for='fname'>First Name:</label>
+                  <input id='fname' type='text' class='form-control' required>
+                </div>
+                <div class='form-group'>
+                  <label for='lname'>Last Name:</label>
+                  <input id='lname' type='text' class='form-control' required>
+                </div>
+                <input type='submit' id='go' class='btn btn-danger' value='Make It So'>
+              </form>
             </div>
           </div>
         </div>
