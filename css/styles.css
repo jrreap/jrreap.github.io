@@ -31,7 +31,3 @@ body {
 .nav-item .nav-link:hover {
   background-color: rgb(86, 187, 250);
 }
-
-.card {
-  background-color: grey;
-}
