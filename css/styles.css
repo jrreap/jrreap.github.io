@@ -2,59 +2,12 @@ body {
   margin: 0px;
 }
 
-.text-center {
-  text-align: center !important;
-}
-
-.header {
-  padding-top: 10px;
-  margin-bottom: -10px;
-}
-
-.subtitle {
-  font-size: 15px;
-}
-
-.page {
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 .container {
-  padding: 5px 5px 5px 5px;
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center; 
   width: 100%;
-}
-
-.col {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.row {
-  display: flex;
-  flex-direction: row;
-}
-
-.student-link {
-  font-size: 20px;
-  font-weight: 700;
-  padding: 10px;
-  margin: 5px;
-  text-decoration: none;
-  background-color: lightskyblue;
-  border: 2px;
-  border-color: black;
-  border-radius: 5px;
-  color: white;
-}
-
-.student-link:hover {
-  background-color: rgb(86, 187, 250);
 }
 
 .headshot {
@@ -64,31 +17,19 @@ body {
 }
 
 /* Navbar styles */
-.nav {
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  background-color: lightgrey;
+.nav-item .nav-link {
+  border-radius: 8px;
+  font-size: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
-.nav a { 
-  padding: 10px;
-  margin: 5px;
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.9);
-  border: rgb(141, 141, 141);
-  border-width: 2px;
-  border-style: solid;
-  border-radius: 5px;
-}
-
-.nav .active {
+.nav-item .nav-link.active {
   background-color: rgb(86, 187, 250);
 }
 
-.nav a:hover {
-  background-color: rgb(86, 187, 250)
+.nav-item .nav-link:hover {
+  background-color: rgb(86, 187, 250);
 }
 
 /* Tile (basically a cheap version of the Bootstrap Card) Styles */
