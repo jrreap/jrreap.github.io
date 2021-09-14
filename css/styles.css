@@ -16,6 +16,17 @@ body {
   width: 300px;
 }
 
+.btn-primary {
+  background-color: rgb(86, 187, 250);
+  border-color: rgb(86, 187, 250);
+
+}
+
+.btn-primary:hover {
+  background-color: rgb(49, 176, 255);
+  border-color: rgb(86, 187, 250);
+}
+
 /* Navbar styles */
 .nav-item .nav-link {
   border-radius: 8px;
