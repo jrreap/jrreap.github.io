@@ -1,7 +1,7 @@
 let errors = []
 
 function handleFormSubmit () {
-  errors = []
+  errors = [ "Name is empty", "AHHH Ev is weird" ]
 
   const formElement = document.querySelector('form');
   const formData = new FormData(formElement)
@@ -10,6 +10,24 @@ function handleFormSubmit () {
     console.log(`${value}, ${key}`)
     validateInputs(key, value)
   })
+
+  updateAlert()
+}
+
+function updateAlert () {
+  if (errors.length === 0) {
+    return
+  }
+
+  const alertEle = document.getElementById('alert')
+  const listEle = document.getElementById('alert-message')
+
+  for (const error of errors) {
+    const list = document.createElement('li')
+    list.innerText = error
+    listEle.insertAdjacentElement('afterend', list)
+  }
+  alertEle.classList.remove('visually-hidden')
 }
 
 function validateInputs (key, value) {
