@@ -8,7 +8,6 @@ async function handleFormSubmit (event) {
   const formData = new FormData(formElement)
 
   for (const item of formData.entries()) {
-    console.log(`${item[0]}, ${item[1]}`)
     await validateInputs(item[0], item[1])
   }
 
@@ -53,14 +52,35 @@ async function validateInputs (key, value) {
       }
       break
     case 'user_phone':
+      if (!validatePhone(value)) {
+        errors.push('You must have a valid phone number, separated with dashes!')
+      }
       break
     case 'user_message':
+      if (isStringNullOrEmpty(value)) {
+        errors.push('Your message can not be blank!')
+      }
       break
   }
 }
 
 function validatePhone (phone) {
   const parsed = phone.split('-')
+  if (parsed.length === 3) {
+    // Check lengths
+    if (parsed[0].length === 3 && parsed[1].length === 3 && parsed[2].length === 4) {
+      // Check they are actual numbers
+      for (const num of parsed) {
+        if (isNaN(num)) {
+          return false
+        }
+      }
+
+      return true
+    }
+  }
+
+  return false
 }
 
 async function validateEmail (email) {
@@ -71,8 +91,6 @@ async function validateEmail (email) {
   if (half.length === 2) {
     const fqdn = half[1].split('.')
     if (fqdn.length === 2) {
-      const address = half[0]
-      const domain = fqdn[0]
       const topLevelDomain = fqdn[1]
 
       for (const item of domains) {
@@ -83,7 +101,7 @@ async function validateEmail (email) {
 
       return true
     }
-
+  }
   return false
 }
 
@@ -98,15 +116,11 @@ async function getDomains () {
     const raw = await res.text()
     const parsed = raw.split('\n')
     parsed.splice(0, 1) // Removed the comment at the top
-    return parsed 
+    return parsed
   } catch (err) {
     console.error(err)
     return []
   }
-}
-
-function parseRawEmail (email) {
-
 }
 
 function isStringNullOrEmpty (text) {
@@ -122,4 +136,4 @@ function isStringNullOrEmpty (text) {
 }
 
 // Bind a click event to the button
-document.getElementById('submit').onclick = (event) => handleFormSubmit(event)
+document.getElementById('submit').onclick = (event) => { handleFormSubmit(event) }
