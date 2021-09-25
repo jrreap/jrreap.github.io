@@ -56,7 +56,7 @@ async function validateInputs (key, value) {
 }
 
 async function validateEmail (email) {
-  //const domains = await getDomains()
+  const domains = await getDomains()
 
   const half = email.split('@')
   const fqdn = half[1].split('.')
@@ -72,14 +72,19 @@ async function validateEmail (email) {
 
 async function getDomains () {
   try {
-    const res = await fetch({
-      url: "http://data.iana.org/TLD/tlds-alpha-by-domain.txt",
-    })
-    const json = await res.json()
-    console.log(json)
-    return json
+    const res = await fetch("http://data.iana.org/TLD/tlds-alpha-by-domain.txt")
+
+    if (!res.ok) {
+      throw new Error("Response returned with a non success status code!")
+    }
+
+    const raw = await res.text()
+    const parsed = raw.split("\n")
+    parsed.splice(0,1) // Remove the comment at the top
+    return parsed
   } catch (err) {
     console.error(err)
+    return []
   }
 }
 
