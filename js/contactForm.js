@@ -44,7 +44,8 @@ async function validateInputs (key, value) {
       }
       break
     case "user_email":
-      if (await !validateEmail(value)) {
+      const valid = await validateEmail(value)
+      if (!valid) {
         errors.push("You must submit a valid email!")
       }
       break
@@ -59,15 +60,26 @@ async function validateEmail (email) {
   const domains = await getDomains()
 
   const half = email.split('@')
-  const fqdn = half[1].split('.')
-  const address = half[0]
-  const domain = fqdn[0]
-  const topLevelDomain = fqdn[1]
+  
+  if (half.length === 2) {
+    const fqdn = half[1].split('.')
+    if (fqdn.length === 2) {
+      const address = half[0]
+      const domain = fqdn[0]
+      const topLevelDomain = fqdn[1]
 
-  console.log(address)
-  console.log(domain)
-  console.log(topLevelDomain)
+      for (const item of domains) {
+        if (topLevelDomain === item.toLowerCase()) {
+          return true
+        }
+      }
 
+      return true
+    }
+
+  }
+
+  return false
 }
 
 async function getDomains () {
