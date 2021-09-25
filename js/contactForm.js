@@ -4,7 +4,7 @@ async function handleFormSubmit (event) {
   event.preventDefault()
   errors = []
 
-  const formElement = document.querySelector('form');
+  const formElement = document.querySelector('form')
   const formData = new FormData(formElement)
 
   for (const item of formData.entries()) {
@@ -22,9 +22,9 @@ function updateAlert () {
 
   const alertEle = document.getElementById('alert')
   const listEle = document.getElementById('alert-message')
-  
+
   // Clear any previous errors
-  listEle.innerHTML = ""
+  listEle.innerHTML = ''
 
   for (const error of errors) {
     const list = document.createElement('li')
@@ -36,34 +36,38 @@ function updateAlert () {
 
 async function validateInputs (key, value) {
   switch (key) {
-    case "user_fname":
+    case 'user_fname':
       if (isStringNullOrEmpty(value)) {
-        errors.push("First name must not be empty!")
+        errors.push('First name must not be empty!')
       }
       break
-    case "user_lname":
+    case 'user_lname':
       if (isStringNullOrEmpty(value)) {
-        errors.push("Last name must not be empty!")
+        errors.push('Last name must not be empty!')
       }
       break
-    case "user_email":
+    case 'user_email':
       const valid = await validateEmail(value)
       if (!valid) {
-        errors.push("You must submit a valid email!")
+        errors.push('You must submit a valid email!')
       }
       break
-    case "user_phone":
+    case 'user_phone':
       break
-    case "user_message":
+    case 'user_message':
       break
   }
+}
+
+function validatePhone (phone) {
+  const parsed = phone.split('-')
 }
 
 async function validateEmail (email) {
   const domains = await getDomains()
 
   const half = email.split('@')
-  
+
   if (half.length === 2) {
     const fqdn = half[1].split('.')
     if (fqdn.length === 2) {
@@ -80,23 +84,21 @@ async function validateEmail (email) {
       return true
     }
 
-  }
-
   return false
 }
 
 async function getDomains () {
   try {
-    const res = await fetch("http://data.iana.org/TLD/tlds-alpha-by-domain.txt")
+    const res = await fetch('http://data.iana.org/TLD/tlds-alpha-by-domain.txt')
 
     if (!res.ok) {
-      throw new Error("Response returned with a non success status code!")
+      throw new Error('Response returned with a non success status code!')
     }
 
     const raw = await res.text()
-    const parsed = raw.split("\n")
-    parsed.splice(0,1) // Remove the comment at the top
-    return parsed
+    const parsed = raw.split('\n')
+    parsed.splice(0, 1) // Removed the comment at the top
+    return parsed 
   } catch (err) {
     console.error(err)
     return []
@@ -108,7 +110,7 @@ function parseRawEmail (email) {
 }
 
 function isStringNullOrEmpty (text) {
-  if (text === "") {
+  if (text === '') {
     return true
   }
 
