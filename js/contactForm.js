@@ -1,6 +1,7 @@
 let errors = []
 
-async function handleFormSubmit () {
+async function handleFormSubmit (event) {
+  event.preventDefault()
   errors = [ "Name is empty", "AHHH Ev is weird" ]
 
   const formElement = document.querySelector('form');
@@ -98,4 +99,5 @@ function isStringNullOrEmpty (text) {
   return false
 }
 
-document.getElementById('submit').onclick = handleFormSubmit
+// Bind a click event to the button
+document.getElementById('submit').onclick = (event) => handleFormSubmit(event)
