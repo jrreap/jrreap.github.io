@@ -2,7 +2,7 @@ let errors = []
 
 async function handleFormSubmit (event) {
   event.preventDefault()
-  errors = [ "Name is empty", "AHHH Ev is weird" ]
+  errors = []
 
   const formElement = document.querySelector('form');
   const formData = new FormData(formElement)
@@ -22,11 +22,14 @@ function updateAlert () {
 
   const alertEle = document.getElementById('alert')
   const listEle = document.getElementById('alert-message')
+  
+  // Clear any previous errors
+  listEle.innerHTML = ""
 
   for (const error of errors) {
     const list = document.createElement('li')
     list.innerText = error
-    listEle.insertAdjacentElement('afterend', list)
+    listEle.insertAdjacentElement('beforeend', list)
   }
   alertEle.classList.remove('visually-hidden')
 }
