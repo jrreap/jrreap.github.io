@@ -1,15 +1,15 @@
 let errors = []
 
-function handleFormSubmit () {
+async function handleFormSubmit () {
   errors = [ "Name is empty", "AHHH Ev is weird" ]
 
   const formElement = document.querySelector('form');
   const formData = new FormData(formElement)
-  
-  formData.forEach((value, key) => {
-    console.log(`${value}, ${key}`)
-    validateInputs(key, value)
-  })
+
+  for (const item of formData.entries()) {
+    console.log(`${item[0]}, ${item[1]}`)
+    await validateInputs(item[0], item[1])
+  }
 
   updateAlert()
 }
@@ -30,7 +30,7 @@ function updateAlert () {
   alertEle.classList.remove('visually-hidden')
 }
 
-function validateInputs (key, value) {
+async function validateInputs (key, value) {
   switch (key) {
     case "user_fname":
       if (isStringNullOrEmpty(value)) {
@@ -43,6 +43,9 @@ function validateInputs (key, value) {
       }
       break
     case "user_email":
+      if (await !validateEmail(value)) {
+        errors.push("You must submit a valid email!")
+      }
       break
     case "user_phone":
       break
@@ -51,8 +54,36 @@ function validateInputs (key, value) {
   }
 }
 
-function validateEmail () {
-  
+async function validateEmail (email) {
+  //const domains = await getDomains()
+
+  const half = email.split('@')
+  const fqdn = half[1].split('.')
+  const address = half[0]
+  const domain = fqdn[0]
+  const topLevelDomain = fqdn[1]
+
+  console.log(address)
+  console.log(domain)
+  console.log(topLevelDomain)
+
+}
+
+async function getDomains () {
+  try {
+    const res = await fetch({
+      url: "http://data.iana.org/TLD/tlds-alpha-by-domain.txt",
+    })
+    const json = await res.json()
+    console.log(json)
+    return json
+  } catch (err) {
+    console.error(err)
+  }
+}
+
+function parseRawEmail (email) {
+
 }
 
 function isStringNullOrEmpty (text) {
