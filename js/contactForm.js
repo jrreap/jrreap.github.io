@@ -15,11 +15,13 @@ async function handleFormSubmit (event) {
 }
 
 function updateAlert () {
+  const alertEle = document.getElementById('alert')
+
   if (errors.length === 0) {
+    alertEle.classList.add('visually-hidden')
     return
   }
 
-  const alertEle = document.getElementById('alert')
   const listEle = document.getElementById('alert-message')
 
   // Clear any previous errors
