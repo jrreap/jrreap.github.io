@@ -1,5 +1,11 @@
 let errors = []
 
+emailjs.init('user_6UUFIT7IfsgLpO2vfgnsr')
+
+async function sendEmail (formElement) {
+  await emailjs.sendForm('service_zwvrkml', 'template_fb3kkpb', formElement)
+}
+
 async function handleFormSubmit (event) {
   event.preventDefault()
   errors = []
@@ -9,6 +15,10 @@ async function handleFormSubmit (event) {
 
   for (const item of formData.entries()) {
     await validateInputs(item[0], item[1])
+  }
+
+  if (errors.length === 0) {
+    await sendEmail(formElement)
   }
 
   updateAlert()
