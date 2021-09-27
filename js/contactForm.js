@@ -16,9 +16,11 @@ async function handleFormSubmit (event) {
 
 function updateAlert () {
   const alertEle = document.getElementById('alert')
+  const alertSuccess = document.getElementById('alert-success')
 
   if (errors.length === 0) {
     alertEle.classList.add('visually-hidden')
+    alertSuccess.classList.remove('visually-hidden')
     return
   }
 
@@ -33,6 +35,7 @@ function updateAlert () {
     listEle.insertAdjacentElement('beforeend', list)
   }
   alertEle.classList.remove('visually-hidden')
+  alertSuccess.classList.add('visually-hidden')
 }
 
 async function validateInputs (key, value) {
