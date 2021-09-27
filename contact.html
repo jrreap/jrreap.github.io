@@ -70,6 +70,12 @@
           </div>
         </div>
 
+        <div class="row text-center d-flex justify-content-center">
+          <div id='alert-success' class="alert alert-success visually-hidden" role="alert">
+            <p class="mb-2 lead">Your message was successfully sent!</p>
+          </div>
+        </div>
+
         <div class="row">
           <div class="card mb-2 bg-light">
             <div class="card-body">
@@ -77,7 +83,7 @@
                 <div class="row mb-2">
                   <div class='col'>
                     <label for='user_fname' class="form-label">First Name:</label>
-                    <input class="form-control" id='user_fname' name='user_fname' type='text' class='form-control'
+                    <input id='user_fname' name='user_fname' type='text' class='form-control'
                       required>
                   </div>
                   <div class='col'>
@@ -98,7 +104,7 @@
                 <div class='row mb-2'>
                   <div class="col">
                     <label for='user_message' class="form-label">Message:</label>
-                    <textarea id='user_message' name='user_message' type="text" class='form-control'
+                    <textarea id='user_message' name='user_message' class='form-control'
                       required></textarea>
                   </div>
                 </div>
