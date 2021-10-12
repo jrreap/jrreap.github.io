@@ -1,6 +1,7 @@
 body {
   margin: 0px;
-  font-family: Roboto, 'Segoe UI', sans-serif
+  font-family: 'Roboto', 'Segoe UI', sans-serif;
+  font-weight: 300;
 }
 
 .container {
@@ -9,6 +10,17 @@ body {
   justify-content: center;
   align-items: center; 
   width: 100%;
+}
+
+.thin {
+  font-weight: 300;
+}
+
+.section {
+  background-color: rgb(86, 187, 250);
+  width: 100%;
+  margin: 0;
+  padding: 15px;
 }
 
 .headshot {
@@ -42,4 +54,10 @@ body {
 
 .nav-item .nav-link:hover {
   background-color: rgb(86, 187, 250);
+}
+
+.navbar-brand {
+  color: rgb(86, 187, 250) !important;
+  font-weight: 700;
+  font-size: 25px;
 }
