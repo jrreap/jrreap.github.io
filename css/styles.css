@@ -16,6 +16,11 @@ body {
   font-weight: 300;
 }
 
+.header {
+  font-weight: 900;
+  font-size: 50px;
+}
+
 .section {
   background-color: rgb(86, 187, 250);
   width: 100%;
