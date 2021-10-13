@@ -21,14 +21,6 @@ body {
   font-size: 50px;
 }
 
-.section {
-  background-color: rgb(86, 187, 250);
-  width: 100%;
-  margin: 0;
-  padding: 15px;
-  color: white;
-}
-
 .main {
   margin-top: 5rem;
   margin-bottom: 5rem;
@@ -38,7 +30,7 @@ body {
   border-radius: 50px;
   height: 200px;
   width: 300px;
-  margin: 25px;
+  margin: 50px;
 }
 
 .btn-primary {
@@ -50,6 +42,39 @@ body {
 .btn-primary:hover {
   background-color: rgb(49, 176, 255);
   border-color: rgb(86, 187, 250);
+}
+
+/* Sections */
+.section-header {
+  font-weight: 500;
+  font-size: 35px;
+}
+
+.section-text {
+  font-weight: 300;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.section {
+  background-color: rgb(86, 187, 250);
+  width: 100%;
+  margin: 0;
+  padding: 50px;
+  color: white;
+}
+
+/* Font classes */
+.font-300 {
+  font-weight: 300;
+}
+
+.font-500 {
+  font-weight: 500;
+}
+
+.font-900 {
+  font-weight: 900;
 }
 
 /* Navbar styles */
@@ -71,5 +96,5 @@ body {
 .navbar-brand {
   color: rgb(86, 187, 250) !important;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 35px;
 }
