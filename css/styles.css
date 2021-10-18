@@ -33,6 +33,11 @@ body {
   margin: 50px;
 }
 
+/* Bootstrap overrides */
+.badge.bg-primary {
+  background-color: rgb(0, 157, 255) !important;
+}
+
 .btn-primary {
   background-color: rgb(86, 187, 250);
   border-color: rgb(86, 187, 250);
