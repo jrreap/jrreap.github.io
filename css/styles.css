@@ -66,14 +66,17 @@ body {
   padding: 10px;
 }
 
-.section {
+.section.blue {
   background-color: rgb(86, 187, 250);
+  color: white;
+}
+
+.section {
   width: 100%;
   margin: 0;
   padding: 100px;
   margin-top: 25px;
   margin-bottom: 25px;
-  color: white;
 }
 
 /* Font classes */
