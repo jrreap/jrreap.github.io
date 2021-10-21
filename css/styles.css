@@ -66,6 +66,17 @@ body {
   padding: 10px;
 }
 
+.section-subtext {
+  font-weight: 300;
+  font-size: 17px;
+  padding: 10px;
+}
+
+.section-subheader {
+  font-weight: 500;
+  font-size: 35px;
+}
+
 .section.blue {
   background-color: rgb(86, 187, 250);
   color: white;
