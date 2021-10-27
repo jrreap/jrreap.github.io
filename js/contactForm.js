@@ -66,11 +66,6 @@ async function validateInputs (key, value) {
         errors.push('You must submit a valid email!')
       }
       break
-    case 'user_phone':
-      if (!validatePhone(value)) {
-        errors.push('You must have a valid phone number, separated with dashes!')
-      }
-      break
     case 'user_message':
       if (isStringNullOrEmpty(value)) {
         errors.push('Your message can not be blank!')

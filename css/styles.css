@@ -63,6 +63,11 @@ body {
   border-color: rgb(86, 187, 250);;
 }
 
+/* Social Icons */
+.social {
+  color: rgb(33, 37, 41);
+}
+
 /* Contact Card */
 .contact-card {
   color: rgb(33, 37, 41);
