@@ -117,6 +117,12 @@ body {
   font-size: 35px;
 }
 
+.section-sub-subheader {
+  font-weight: 300;
+  font-size: 25px;
+  color: #56bbfa;
+}
+
 .section.blue {
   background-color: rgb(86, 187, 250);
   color: white;
