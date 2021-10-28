@@ -65,7 +65,15 @@ body {
 
 /* Social Icons */
 .social {
+  -moz-transition: color .1s ease-in;
+  -o-transition: color .1s ease-in;
+  -webkit-transition: color .1s ease-in;
+  transition: color .1s ease-in;
   color: rgb(33, 37, 41);
+}
+
+.social:hover {
+  color: #53b5f3;
 }
 
 /* Contact Card */
@@ -135,6 +143,10 @@ body {
 
 /* Navbar styles */
 .nav-item .nav-link {
+  -moz-transition: background-color .1s ease-in;
+  -o-transition: background-color .1s ease-in;
+  -webkit-transition: background-color .1s ease-in;
+  transition: background-color .1s ease-in;
   border-radius: 8px;
   font-size: 20px;
   margin-left: 5px;
