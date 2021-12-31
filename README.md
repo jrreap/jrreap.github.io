@@ -1,3 +1,3 @@
 # jrreap.github.io
 
-A WIP portfolio site
+The main repo for my personal portfolio website. 
